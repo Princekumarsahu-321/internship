@@ -8,28 +8,36 @@ Signup and Login
 Secure password handling
 JWT-based authentication
 Logout and password management
+
 🏡 Property Management
 Browse available properties
 View property details
 Search and filter accommodations
+
 📅 Booking System
 Book accommodations
 Manage user bookings
 Booking-related API integration
+
 🤖 AI Trip Planner
 AI-powered travel planning
 Helps users plan trips alongside accommodation booking
+
 👤 User Profile
 View and update profile information
 Manage account details
+
 🗺️ Interactive Maps
 Location-based property information using React Leaflet
+
 📱 Responsive Frontend
 Modern React interface
 Responsive user experience
+
 🐳 Docker Support
 Dockerized application
 Easier deployment across environments
+
 🛠️ Tech Stack
 Frontend
 React.js
@@ -57,6 +65,7 @@ Git & GitHub
 Render
 Vercel
 MongoDB Atlas
+
 🏗️ Project Structure
 Homely-Hub/
 │
