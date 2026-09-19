@@ -3,6 +3,7 @@ Homely Hub 🏠
 Homely Hub is a full-stack property booking platform built using the MERN stack. It allows users to explore accommodations, manage their accounts, make bookings, and use an AI-powered trip planner to assist with travel planning.
 
 🚀 Features
+
 🔐 User Authentication
 Signup and Login
 Secure password handling
@@ -200,20 +201,20 @@ Git and GitHub workflow
 Possible future improvements include:
 
 💳 Online payment integration
+
 ⭐ Property reviews and ratings
+
 🔔 Booking notifications
+
 🧠 More advanced AI travel recommendations
+
 📍 Improved location-based recommendations
+
 📊 Admin dashboard and analytics
+
 ☁️ Expanded cloud deployment and CI/CD
-👨‍💻 Author
 
-Prince Kumar
 
-B.Tech CSE Student
-Jagannath University, Jaipur
-
-GitHub: Princekumarsahu-321
 LinkedIn: Prince Kumar on LinkedIn
 Email: princekumarsahu321@gmail.com
 ⭐ Project
