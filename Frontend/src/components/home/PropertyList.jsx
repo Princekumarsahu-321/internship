@@ -1,0 +1,137 @@
+import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import gsap from "gsap";
+import "../../css/Home.css";
+
+import { useDispatch, useSelector } from "react-redux";
+import {  propertyAction} from "../../store/Property/property-slice.js";
+import {getAllProperties} from "../../store/Property/property-action.js";
+
+const Card = ({ id, image, name, address, price }) => {
+  return (
+    <figure className="property">
+      <Link to={`/propertylist/${id}`}>
+        <img src={image} alt="Propertyimg" />
+      </Link>
+
+      <h4>{name}</h4>
+
+      <figcaption>
+        <main className="propertydetails">
+          <h5>{name}</h5>
+
+          <h6>
+            <span className="material-symbols-outlined houseicon">
+              home_pin
+            </span>
+            {address}
+          </h6>
+
+          <p>
+            <span className="price">₹{price}</span> per night
+          </p>
+        </main>
+      </figcaption>
+    </figure>
+  );
+};
+
+const PropertyList = () => {
+  const [currentPage, setCurrentPage] = useState({ page: 1 });
+
+  const dispatch = useDispatch();
+
+  const { properties, totalProperties } = useSelector(
+    (state) => state.properties
+  );
+
+  const safeTotalProperties = Number(totalProperties) || 0;
+  const lastPage = Math.max(1, Math.ceil(safeTotalProperties / 12));
+
+  const propertyListRef = useRef(null);
+
+  const changePage = (nextPage) => {
+    setCurrentPage((prev) => {
+      const current = Number(prev?.page) || 1;
+      const clampedPage = Math.min(Math.max(1, nextPage), lastPage);
+      return { page: Number.isFinite(clampedPage) ? clampedPage : current };
+    });
+  };
+
+ useEffect(() => {
+  dispatch(
+    propertyAction.updateSearchParams({
+      page: currentPage.page,
+    })
+  );
+
+  dispatch(getAllProperties());
+}, [currentPage.page, dispatch]);
+
+  useEffect(() => {
+    if (propertyListRef.current) {
+      gsap.fromTo(
+        propertyListRef.current.children,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+        }
+      );
+    }
+  }, [properties]);
+
+  return (
+    <>
+      {properties.length === 0 ? (
+        <p className="not_found">Property not found</p>
+      ) : (
+        <div className="propertylist" ref={propertyListRef}>
+          {properties.map((property) => (
+            <Card
+              key={property._id}
+              id={property._id}
+              image={property.images?.[0]?.url}
+              name={property.propertyName}
+              address={`${property.address?.city}, ${property.address?.state} ${property.address?.pincode}`}
+              price={property.price}
+              slug={property.slug}
+            />
+          ))}
+        </div>
+      )}
+
+     <div className="pagination">
+       <button
+         type="button"
+         className="previous_btn"
+         onClick={() => changePage(currentPage.page - 1)}
+         disabled={currentPage.page <= 1}
+       >
+         <span className="material-symbols-outlined">
+           arrow_back_ios_new
+         </span>
+       </button>
+
+       <button
+         type="button"
+         className="next_btn"
+         onClick={() => changePage(currentPage.page + 1)}
+         disabled={currentPage.page >= lastPage}
+       >
+         <span className="material-symbols-outlined">
+           arrow_forward_ios
+         </span>
+       </button>
+     </div>
+    </>
+  );
+};
+
+export default PropertyList;
