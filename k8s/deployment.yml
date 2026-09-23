@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: my-project
-    spec:
+  spec: 
     containers:
         - name: my-project
           image: prxo/my-project:04
