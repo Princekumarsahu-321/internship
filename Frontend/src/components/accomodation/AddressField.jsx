@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AddressField = ({ form }) => {
+export const AddressField = () => {
   return (
     <div className="address-container ">
       <h4 className="address-header">Address</h4>

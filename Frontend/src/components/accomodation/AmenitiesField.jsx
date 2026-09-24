@@ -25,7 +25,7 @@ const initialamenities = [
   { id: "ac", value: "Ac", checked: false, icon: "air" },
 ];
 
-const AmenitiesField = ({ form }) => {
+const AmenitiesField = () => {
   return (
     <div className="perks-container">
       <h4 className="perks-header">Amenities</h4>
