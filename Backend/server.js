@@ -5,6 +5,18 @@ import connectDB from "./src/db/db.js";
 
 import cors from "cors";
 
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+
+app.use(helmet());
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100
+});
+
+app.use("/api", limiter);
+
 app.use(
     cors({
         origin: [
