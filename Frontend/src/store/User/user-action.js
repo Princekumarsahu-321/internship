@@ -41,32 +41,12 @@ export const getLogin = (user) => async (dispatch) => {
       user
     );
 
-    dispatch(userActions.getLogindetails(data.data.user));
+    dispatch(userActions.getLogindetails(data.user));
   } catch (error) {
     const message =
       error.response?.data?.message ||
       error.message ||
       "Login failed";
-
-    dispatch(userActions.getError(message));
-  }
-};
-
-export const getGoogleLogin = (credentialPayload) => async (dispatch) => {
-  try {
-    dispatch(userActions.getLoginRequest());
-
-    const { data } = await axiosInstance.post(
-      "/auth/user/google",
-      credentialPayload
-    );
-
-    dispatch(userActions.getLogindetails(data.data.user));
-  } catch (error) {
-    const message =
-      error.response?.data?.message ||
-      error.message ||
-      "Google login failed";
 
     dispatch(userActions.getError(message));
   }
@@ -109,7 +89,6 @@ export const updateUser = (updateUser) => async (dispatch) => {
     );
 
     dispatch(userActions.getCurrentUser(data.user));
-    return data.user;
   } catch (error) {
     const message =
       error.response?.data?.message ||
@@ -117,7 +96,6 @@ export const updateUser = (updateUser) => async (dispatch) => {
       "User update failed";
 
     dispatch(userActions.getError(message));
-    throw error;
   }
 };
 
