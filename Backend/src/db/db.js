@@ -7,7 +7,6 @@ const connectDB = async () => {
     await mongoose.connect(process.env.MONGO_URL);
 
     // await mongoose.connect(process.env.MONGO_URL_ON);
-    // await mongoose.connect(MONGO_URL_ON="mongodb+srv://princestm321_db_user:1RcgHs36p7N8eIg7@cluster0.7azuuuz.mongodb.net/intern");
 
     // const isProduction = process.env.NODE_ENV === "production";
 
