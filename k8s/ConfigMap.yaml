@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homely-hub-config
+  labels:
+    app: homely-hub
+
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+
+  # Frontend / Backend API
+  VITE_API_URL: "http://homely-hub-service:3000/api"
+
+  # Application settings
+  APP_NAME: "Homely Hub"
+
+  # Kubernetes service configuration
+  SERVICE_NAME: "homely-hub-service"
