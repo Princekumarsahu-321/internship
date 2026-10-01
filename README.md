@@ -188,6 +188,7 @@ docker build -t homely-hub .
 Run the container:
 
 docker run -p 3000:3000 homely-hub
+
 📸 Project Highlights
 
 Homely Hub brings together:
