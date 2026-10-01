@@ -164,6 +164,7 @@ AI Service
 Generated Travel Plan
   ↓
 User
+
 🔐 Security
 
 Homely Hub implements authentication and authorization mechanisms to protect user accounts and application resources.
