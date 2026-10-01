@@ -211,6 +211,7 @@ AI API integration
 Docker containerization
 Deployment and environment configuration
 Git and GitHub workflow
+
 🔮 Future Scope
 
 Possible future improvements include:
