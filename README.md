@@ -137,6 +137,7 @@ npm run dev
 The application can then be accessed through the local Vite URL shown in the terminal.
 
 🔄 Application Flow
+
 User
   ↓
 React Frontend
@@ -233,6 +234,7 @@ Possible future improvements include:
 
 LinkedIn: Prince Kumar on LinkedIn
 Email: princekumarsahu321@gmail.com
+
 ⭐ Project
 
 Homely Hub: Your Home, Your Lifestyle, Your Inspiration.
