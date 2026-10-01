@@ -69,23 +69,36 @@ MongoDB Atlas
 
 🏗️ Project Structure
 Homely-Hub/
+
 │
 ├── Backend/
+
 │   ├── src/
+
 │   ├── public/
+
 │   ├── server.js
+
 │   └── package.json
 │
 ├── Frontend/
+
 │   ├── src/
+
 │   ├── public/
+
 │   └── package.json
 │
 ├── .github/
+
 ├── .dockerignore
+
 ├── dockerfile
+
 └── README.md
+
 ⚙️ Installation
+
 1. Clone the repository
 git clone https://github.com/Princekumarsahu-321/internship.git
 cd internship
