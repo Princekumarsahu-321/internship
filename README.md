@@ -8,6 +8,7 @@ The project combines modern web development, database integration, AI capabiliti
 
 ## 🚀 Features
 
+
 ### 🔐 Authentication & Account Management
 
 * User signup and login
